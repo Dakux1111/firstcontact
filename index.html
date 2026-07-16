@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FIRST CONTACT | La conversación con el universo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+body{
+
+background:
+linear-gradient(#020617,#000);
+
+color:white;
+
+font-family:'Montserrat',sans-serif;
+
+overflow-x:hidden;
+
+}
+
+
+/* UNIVERSO */
+
+.space{
+
+position:fixed;
+width:100%;
+height:100%;
+
+background:
+
+radial-gradient(circle at 20% 20%,#1e3a8a,transparent 20%),
+radial-gradient(circle at 80% 30%,#581c87,transparent 20%),
+#020617;
+
+z-index:-3;
+
+}
+
+
+
+.stars{
+
+position:fixed;
+
+width:100%;
+height:100%;
+
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:60px 60px;
+
+animation:
+starsMove 25s linear infinite;
+
+opacity:.6;
+
+z-index:-2;
+
+}
+
+
+@keyframes starsMove{
+
+from{
+background-position:0 0;
+}
+
+to{
+background-position:0 1000px;
+}
+
+}
+
+
+
+/* TIERRA */
+
+
+.earth{
+
+position:absolute;
+
+right:8%;
+top:120px;
+
+width:280px;
+height:280px;
+
+border-radius:50%;
+
+background:url(
+"https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg"
+);
+
+background-size:cover;
+
+box-shadow:
+
+0 0 70px #38bdf8;
+
+
+animation:
+
+earth 30s linear infinite;
+
+}
+
+
+
+@keyframes earth{
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+
+
+/* OVNI */
+
+
+.ufo{
+
+position:absolute;
+
+font-size:90px;
+
+top:180px;
+
+left:-150px;
+
+
+animation:
+
+fly 15s linear infinite;
+
+
+}
+
+
+@keyframes fly{
+
+
+0%{
+left:-150px;
+}
+
+
+45%{
+left:45%;
+}
+
+
+60%{
+left:50%;
+}
+
+
+100%{
+left:110%;
+}
+
+
+}
+
+
+
+/* TITULOS */
+
+
+h1{
+
+font-family:'Orbitron';
+
+font-size:70px;
+
+color:#67e8f9;
+
+text-shadow:
+
+0 0 30px cyan;
+
+
+}
+
+
+
+h2{
+
+font-family:'Orbitron';
+
+color:#a5f3fc;
+
+margin-bottom:20px;
+
+}
+
+
+.hero{
+
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:30px;
+
+
+}
+
+
+.hero p{
+
+font-size:25px;
+
+max-width:900px;
+
+margin:30px;
+
+line-height:1.7;
+
+}
+
+
+
+button{
+
+padding:18px 40px;
+
+border-radius:50px;
+
+border:none;
+
+background:#22d3ee;
+
+font-size:18px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+box-shadow:
+
+0 0 30px cyan;
+
+}
+
+
+
+/* SECCIONES */
+
+
+.container{
+
+max-width:1200px;
+
+width:90%;
+
+margin:auto;
+
+}
+
+
+
+.section{
+
+
+margin:80px 0;
+
+
+padding:50px;
+
+
+background:
+
+rgba(255,255,255,.07);
+
+
+border:
+
+1px solid rgba(103,232,249,.5);
+
+
+border-radius:25px;
+
+
+backdrop-filter:blur(15px);
+
+
+}
+
+
+.section p{
+
+font-size:20px;
+
+line-height:1.8;
+
+}
+
+
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+
+}
+
+
+
+.card{
+
+background:
+
+rgba(0,0,0,.4);
+
+padding:30px;
+
+border-radius:20px;
+
+border-left:
+
+5px solid cyan;
+
+
+}
+
+
+.card h3{
+
+color:#67e8f9;
+
+font-size:25px;
+
+margin-bottom:15px;
+
+}
+
+
+
+/* ALIEN */
+
+
+.alien{
+
+font-size:100px;
+
+text-align:center;
+
+animation:
+
+float 3s infinite alternate;
+
+}
+
+
+
+@keyframes float{
+
+to{
+transform:translateY(-20px);
+}
+
+}
+
+
+
+
+/* RADAR */
+
+
+.radar{
+
+width:250px;
+height:250px;
+
+border-radius:50%;
+
+border:3px solid cyan;
+
+margin:40px auto;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+.radar:after{
+
+content:"";
+
+position:absolute;
+
+width:50%;
+
+height:100%;
+
+background:
+
+linear-gradient(90deg,transparent,cyan);
+
+
+animation:
+
+scan 2s infinite linear;
+
+
+transform-origin:right;
+
+
+}
+
+
+@keyframes scan{
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+
+footer{
+
+text-align:center;
+
+padding:60px;
+
+font-size:20px;
+
+color:#aaa;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="space"></div>
+
+<div class="stars"></div>
+
+
+<div class="earth"></div>
+
+
+<div class="ufo">
+🛸
+</div>
+
+
+
+<section class="hero">
+
+
+<h1>
+FIRST CONTACT
+</h1>
+
+
+<p>
+
+La primera conversación de la humanidad con una inteligencia desconocida.
+
+</p>
+
+
+<button onclick="activar()">
+
+Activar señal cósmica
+
+</button>
+
+
+<h2 id="signal"></h2>
+
+
+</section>
+
+
+
+
+
+<div class="container">
+
+
+
+<div class="section">
+
+<h2>
+🌌 ¿Estamos solos?
+</h2>
+
+
+<p>
+
+El universo observable contiene una cantidad inmensa de galaxias y estrellas.
+
+La ciencia aún no ha encontrado evidencia confirmada de vida inteligente fuera de la Tierra,
+pero la posibilidad de que existan otros mundos habitables continúa siendo una de las preguntas más profundas de la humanidad.
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="section">
+
+
+<h2>
+📡 Nuestros mensajes al universo
+</h2>
+
+
+<p>
+
+La humanidad ya ha enviado mensajes simbólicos al espacio.
+
+Las sondas Voyager llevan información sobre nuestro planeta:
+
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+🎵 Sonidos
+</h3>
+
+<p>
+Voces, música y sonidos naturales de la Tierra.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🌎 Imágenes
+</h3>
+
+<p>
+Representaciones de nuestra vida y nuestro planeta.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+👋 Saludos
+</h3>
+
+<p>
+Mensajes en diferentes idiomas humanos.
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="section">
+
+
+<h2>
+👽 Una inteligencia diferente
+</h2>
+
+
+<div class="alien">
+👽
+</div>
+
+
+<p>
+
+Una civilización extraterrestre podría no parecerse a nosotros.
+
+Podría tener otra forma de comunicación,
+otra percepción del tiempo,
+o incluso una naturaleza completamente diferente.
+
+La diferencia no significa peligro.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="section">
+
+
+<h2>
+⚠️ Errores de una civilización joven
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+😨 Actuar por miedo
+</h3>
+
+<p>
+Destruir aquello que no comprendemos.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+💰 Buscar solo beneficios
+</h3>
+
+<p>
+Pensar primero en obtener tecnología.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🧠 Creer que somos superiores
+</h3>
+
+<p>
+Olvidar que también somos una especie joven.
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="section">
+
+
+<h2>
+🤝 El verdadero protocolo humano
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+<h3>1. Escuchar</h3>
+<p>
+Antes de hablar debemos aprender a comprender.
+</p>
+</div>
+
+
+<div class="card">
+<h3>2. Observar</h3>
+<p>
+La paciencia puede revelar más que una reacción rápida.
+</p>
+</div>
+
+
+<div class="card">
+<h3>3. Respetar</h3>
+<p>
+Toda inteligencia merece consideración.
+</p>
+</div>
+
+
+<div class="card">
+<h3>4. Aprender</h3>
+<p>
+El conocimiento debe ir acompañado de responsabilidad.
+</p>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="section">
+
+
+<h2>
+🛰 Centro de detección
+</h2>
+
+
+<div class="radar"></div>
+
+
+<p style="text-align:center">
+
+Buscando señales...
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="section">
+
+
+<h2>
+🌎 La pregunta final
+</h2>
+
+
+<p>
+
+
+Si mañana una señal llegara desde las estrellas...
+
+La pregunta no sería solamente:
+
+"¿Quiénes son ellos?"
+
+
+<br><br>
+
+
+También sería:
+
+"¿Quiénes somos nosotros cuando encontramos algo que no comprendemos?"
+
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<footer>
+
+✨ "Una civilización avanzada no se mide solo por la tecnología que posee, sino por la sabiduría con la que enfrenta lo desconocido."
+
+</footer>
+
+
+
+
+
+<script>
+
+
+function activar(){
+
+
+document.getElementById("signal").innerHTML=
+
+"📡 Señal recibida... Analizando origen desconocido";
+
+
+setTimeout(()=>{
+
+document.getElementById("signal").innerHTML=
+
+"👽 Mensaje detectado: La curiosidad es el primer puente entre mundos.";
+
+
+},4000);
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
